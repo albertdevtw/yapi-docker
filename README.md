@@ -4,34 +4,36 @@
 
 https://github.com/YMFE/yapi
 
+https://yapi.ymfe.org/
+
 #### 環境要求
 * nodejs（7.6+)
 * mongodb（2.6+）
 
-## 初次安裝前
+## 初次啟動 Docker 前
 
 修改 `docker-compose.yml`
 
-### 1 登入帳號
+### 1. 登入設定
 
 郵箱：
 
-    YAPI_ADMIN_ACCOUNT: admin@admin.com
+* YAPI_ADMIN_ACCOUNT: admin@admin.com
 
 密碼：
 
-    YAPI_ADMIN_PASSWORD: ymfe.org
+* YAPI_ADMIN_PASSWORD: ymfe.org
 
-### ports (非必需)
+### 2. 修改 ports (非必需)
 
-預設為：
+預設：
 
 * web: 3000
 * mongodb: 3001
 
 可以改成喜歡的 posts
 
-## 啟動 docker
+## 啟動 Docker
 
 ``` bash
 DOCKERUSER="$(id -u):$(id -g)" docker-compose up -d
