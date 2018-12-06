@@ -1,0 +1,30 @@
+version: "2"
+
+services:
+  yapi:
+    environment:
+      YAPI_ADMIN_ACCOUNT: admin@admin.com
+      YAPI_ADMIN_PASSWORD: ymfe.org
+    hostname: yapi
+    image: node:10.14-alpine
+    volumes:
+      - ./app:/app
+      - ./yapi-entrypoint.sh:/yapi-entrypoint.sh:ro
+    ports:
+      - 3000:3000
+    links:
+      - mongo
+    user: ${DOCKERUSER}
+    restart: always
+    entrypoint: /yapi-entrypoint.sh
+
+  mongo:
+    image: mongo:3.6.8-stretch
+    volumes:
+        - ./mongo:/data/db
+    expose:
+        - 27017
+    ports:
+      - 127.0.0.1:3001:27017
+    user: ${DOCKERUSER}
+    restart: always

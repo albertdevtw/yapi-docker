@@ -1,0 +1,12 @@
+# os files
+._*
+.DS_Store*
+.Spotlight-V100
+.Trashes
+[Dd]esktop.ini
+ehthumbs.db
+Thumbs.db
+
+# project
+app/*
+mongo/*
