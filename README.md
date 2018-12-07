@@ -39,7 +39,7 @@ https://yapi.ymfe.org/
 DOCKERUSER="$(id -u):$(id -g)" docker-compose up -d
 ```
 
-初次啟動安裝會需要比較常的時間，可透過 ` docker-compose logs -f yapi` 檢視安裝進度
+初次啟動安裝會需要比較長的時間，可透過 ` docker-compose logs -f yapi` 檢視安裝進度
 
 直到出現以下訊息表示啟動完成
 
