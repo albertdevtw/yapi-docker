@@ -1,10 +1,11 @@
 #!/bin/sh
 
-set -e
+set -eux
 
 # 下載安裝 YApi 主程式
-if [ ! -d "/app/vendors" ]; then
-  wget -qO- https://github.com/YMFE/yapi/archive/v1.4.1.tar.gz | tar xzv -C /app
+if [ ! -d "/app/vendors" ] || [ ! -f "/app/vendors/package.json" ]; then
+  rm -rf /app/vendors
+  wget -qO- https://github.com/YMFE/yapi/archive/v1.4.1.tar.gz | tar xz -C /app
   mv /app/yapi-1.4.1 /app/vendors
   # 將密碼改為由config注入
   sed -ie 's/'"'"'ymfe\.org'"'"'/yapi\.WEBCONFIG\.adminPassword/g;s/"ymfe\.org"/"\$\{yapi\.WEBCONFIG\.adminPassword\}"/g' /app/vendors/server/install.js
