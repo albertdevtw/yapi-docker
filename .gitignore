@@ -8,5 +8,6 @@ ehthumbs.db
 Thumbs.db
 
 # project
-app/*
+app/init.lock
+app/log/
 mongo/*

@@ -1,0 +1,3 @@
+[submodule "YApi"]
+	path = app/vendors
+	url = https://github.com/YMFE/yapi.git
